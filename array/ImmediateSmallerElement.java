@@ -1,10 +1,10 @@
 /*
-
-author: Rais Ali
-
 */
 package com.rais.array;
-
+/**
+ * @author rais
+ *
+ */
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Scanner;

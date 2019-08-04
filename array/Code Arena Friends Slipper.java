@@ -1,3 +1,7 @@
+/**
+* @author Prakhar Khandelwal
+*/
+
 /*
 	Raj stays at a hostel. He has N friends, numbered from 1 to N.
 
@@ -101,30 +105,31 @@ Hence, he would borrow from friend 3.
 
 import java.util.Scanner;
 
-class TestClass {
+class Solution {
     public static void main(String args[] ) throws Exception {
         
-        Scanner o = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         
-        int T = o.nextInt();
+        int T = scanner.nextInt();
         
         while(T>0){
             
-            int N = o.nextInt();
-            o.nextLine();
-            String entry = o.nextLine();
-            String wake = o.nextLine();
-            String open = o.nextLine();
+            int N = scanner.nextInt();
+            scanner.nextLine();
+            String entry = scanner.nextLine();
+            String wake = scanner.nextLine();
+            String open = scanner.nextLine();
             
-            int R = o.nextInt();
-            int S = o.nextInt();
+            int R = scanner.nextInt();
+            int S = scanner.nextInt();
             
             String friends[] = new String[N];
-            o.nextLine();
+            scanner.nextLine();
             for(int i=0;i<N;i++){
-                friends[i] = o.nextLine();
+                friends[i] = scanner.nextLine();
             }
             
+            // splits the given time into actual seconds.
             String a[] = entry.split(":");
             int entry_time = Integer.parseInt(a[0])*60 + Integer.parseInt(a[1]);
             String a1[] = wake.split(":");
@@ -132,7 +137,7 @@ class TestClass {
             String a2[] = open.split(":");
             int open_time = Integer.parseInt(a2[0])*60 + Integer.parseInt(a2[1]);
 
-            
+            // to calculate as per his friends timing.
             int friends_time[][] = new int[N][2];
 
 
@@ -145,10 +150,13 @@ class TestClass {
             	friends_time[i][1] = Integer.parseInt(aa2[0])*60 + Integer.parseInt(aa2[1]);
             }
 
+            // manipulates the time to fetch the required inbounds.  
             int max_time[] = new int[N];
             for(int i=0;i<N;i++){
-            	if(friends_time[i][0]<=open_time)max_time[i]= friends_time[i][1] + 60;
-            	else if(friends_time[i][0]>=open_time+R+S)max_time[i] = open_time+R+S;
+            	if(friends_time[i][0]<=open_time)
+                    max_time[i]= friends_time[i][1] + 60;
+            	else if(friends_time[i][0]>=open_time+R+S)
+                    max_time[i] = open_time+R+S;
             }
 
             int min = 100000;
@@ -156,11 +164,9 @@ class TestClass {
             for(int i=0;i<N;i++){
             	if(max_time[i]<min){min = max_time[i]; c = i;}
             }
-
+            //prints the minimum matched index.
             System.out.println(c+1);
-
             T--;
         }
-
     }
 }

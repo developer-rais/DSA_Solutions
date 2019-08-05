@@ -1,6 +1,14 @@
+<<<<<<< HEAD
 
+=======
+/*
+*/
+>>>>>>> f7940565b3f24a586f83e62f420d36698239e824
 package com.rais.array;
-
+/**
+ * @author rais
+ *
+ */
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Scanner;

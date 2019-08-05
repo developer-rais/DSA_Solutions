@@ -1,8 +1,4 @@
-/*
 
-author: Rais Ali
-
-*/
 package com.rais.array;
 
 import java.util.HashMap;

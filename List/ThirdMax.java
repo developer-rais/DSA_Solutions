@@ -3,7 +3,7 @@
  *
 */
 
-// Compute Third max in a List in O(n).
+// Compute Third max in a List in O((n^2)/2).
 
 import java.util.Scanner;
 import java.util.List;
@@ -38,27 +38,27 @@ class Solution{
 
 		//main logic
 		for(int j=0;j<N-1;j++){
-	    	if(array.get(j)<=array.get(j+1)){
-		      	if(array.get(j+1)>max){  // for max.
-			  		sec=max;
-			  		max=array.get(j+1);
-			  	}
-			  	if(array.get(j)>=sec)  // for second max
-			    	sec=array.get(j);
-			  	for(int k=j-1;k>=0;k--){   // for third max.
-			   		if(array.get(k)<sec  && array.get(k)>=third)
-			     	third=array.get(k);
-			  	}		 
-		 	}else{
-		    	if(array.get(j)>=max) // for max.
-			 		max=array.get(j);
-		    	if(array.get(j+1)>=sec) // for second max.
-			    	sec=array.get(j+1);
+			if(array.get(j)<=array.get(j+1)){
+				if(array.get(j+1)>max){  // for max.
+					sec=max;
+					max=array.get(j+1);
+				}
+				if(array.get(j)>=sec)  // for second max
+					sec=array.get(j);
+				for(int k=j-1;k>=0;k--){   // for third max.
+					if(array.get(k)<sec  && array.get(k)>=third)
+						third=array.get(k);
+				}		 
+			 }else{
+				if(array.get(j)>=max) // for max.
+						max=array.get(j);
+				if(array.get(j+1)>=sec) // for second max.
+					sec=array.get(j+1);
 				else if(array.get(j+1)>=third) // for third max.
-			   		third=array.get(j+1);
-		 	}
-		 }
-	     System.out.println("MAX = "+ max +  " Second MAX =" + sec + " Third MAX = "+ third); 
+					third=array.get(j+1);
+			 }
+		}
+	     	System.out.println("MAX = "+ max +  " Second MAX =" + sec + " Third MAX = "+ third); 
 	}
 
 	private static void readInput(int i){

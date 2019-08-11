@@ -3,7 +3,7 @@
  *
 */
 
-// Compute Third max in a List in O((n^2)/2).
+// Compute Third max in a List in O((n^2)/2) without sorting.
 
 import java.util.Scanner;
 import java.util.List;

@@ -3,14 +3,14 @@
  *
 */
 
-// Compute Third max in an array in O(n).
+// Compute Third max in a List in O(n).
 
 import java.util.Scanner;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 
-class ThirdMax{
+class Solution{
 
 	private static String MISMATCH = "Oops! You have entered wrong input, Please enter it again.";
 	private static String ELEMENT_COUNT_MSG = "Enter the element count you want to insert:";
